@@ -1,0 +1,65 @@
+!<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    #quote-box {
+      background: #f0f0f0;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 60%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    #quote {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    #author {
+      font-size: 1.2em;
+      color: #555;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Random Quote Generator</h1>
+  <div id="quote-box">
+    <div id="quote">Click the button to get inspired!</div>
+    <div id="author"></div>
+  </div>
+  <button onclick="generateQuote()">New Quote</button>
+
+  <script>
+    const quotes = [
+      { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+      { text: "Don't let yesterday take up too much of today.", author: "Will Rogers" },
+      { text: "It's not whether you get knocked down, it's whether you get up.", author: "Vince Lombardi" },
+      { text: "If you're going through hell, keep going.", author: "Winston Churchill" },
+      { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" }
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
+      document.getElementById("quote").innerText = `"${quote.text}"`;
+      document.getElementById("author").innerText = `– ${quote.author}`;
+    }
+  </script>
+
+</body>
+</html>
